@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="images/favicon.png" type="image/x-icon"/>
+    <!-- Theme tittle -->
+    <title>{{blog.title}}</title>
+
+    <!-- Theme style CSS -->
+    <link href="{% static '' %}blog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static '' %}blog/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{% static '' %}blog/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .hero-image {
+            background-image: url("{{blog.image.url}}");
+            background-color: #cccccc;
+            height: 1000px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="background-transparent">
+
+<!-- Header Top Area -->
+<div class="header_top_area">
+    <div class="container">
+        <div class="header_top_inner d-sm-flex justify-content-sm-between">
+            <ul class="left_info">
+                <li><h4 class="text-white">TechHeart-Blog</h4></li>
+                <li><a href="{% url 'home' %}">Store</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="{% url 'blog' %}" class="active">Blog</a></li>
+            </ul>
+            <ul class="header_social">
+                <li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Header Top Area -->
+
+<!-- Post section -->
+<section class="post_section full_width_single fws_2">
+    <div class="container">
+        <div class="row post_section_inner">
+            <!-- Left_sidebar -->
+            <div class="col-12">
+                <div class="news_left_sidebar nd_2">
+                    <!-- News Item -->
+                    <div class="news_item news_details">
+                        <div class="news_heding">
+                            <h3>{{blog.title}}</h3>
+                            <h6>
+                                <span>{{blog.publish_date}} |</span>
+                                <span> Posted by : {{blog.author}}</span>
+                            </h6>
+                        </div>
+
+
+
+                        <div class="hero-image">
+
+                        </div>
+
+
+
+
+                        <div class="some_interesting row">
+                            <h2 class="col-12">{{blog.desc}}</h2>
+
+                        </div>
+                        <div class="share_row row justify-content-between">
+                            <div class="col-sm-6 share_area">
+                                <ul>
+                                    <li>Share:</li>
+                                    <li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=https://www.linkedin.com/login><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 back_to"><a href="{% url 'blog' %}"><i class="fa fa-arrow-left"></i>Back to blog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Post section -->
+
+
+<!-- Footer Area -->
+{% include "./footer.html" %}
+<!-- End Footer Area -->
+
+<!-- Scroll Top Button -->
+<button class="scroll-top">
+    <i class="fa fa-angle-double-up"></i>
+</button>
+
+<!-- Preloader -->
+<div class="preloader"></div>
+
+<!-- jQuery v3.2.1 -->
+<script src="{% static '' %}blog/js/jquery-3.3.1.min.js"></script>
+<script src="{% static '' %}blog/js/popper.min.js"></script>
+<!-- Bootstrap v4.1.0 -->
+<script src="{% static '' %}blog/js/bootstrap.min.js"></script>
+<!-- Extra Plugin -->
+<script src="{% static '' %}blog/vendors/animate-css/wow.min.js"></script>
+
+<!-- Theme js / Custom js -->
+<script src="{% static '' %}blog/js/theme.js"></script>
+</body>
+
+</html>
